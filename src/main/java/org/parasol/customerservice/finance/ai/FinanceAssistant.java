@@ -6,9 +6,8 @@ import dev.langchain4j.service.UserMessage;
 import io.quarkiverse.langchain4j.RegisterAiService;
 import jakarta.enterprise.context.ApplicationScoped;
 import org.parasol.customerservice.finance.ai.model.FinanceRequestResult;
-import org.parasol.customerservice.finance.ai.tools.FinanceApiTool;
 
-@RegisterAiService(tools = FinanceApiTool.class)
+@RegisterAiService()
 @ApplicationScoped
 public interface FinanceAssistant {
 
