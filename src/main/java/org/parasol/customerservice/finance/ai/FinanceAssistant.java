@@ -4,6 +4,7 @@ import dev.langchain4j.service.Result;
 import dev.langchain4j.service.SystemMessage;
 import dev.langchain4j.service.UserMessage;
 import io.quarkiverse.langchain4j.RegisterAiService;
+import io.quarkiverse.langchain4j.mcp.runtime.McpToolBox;
 import jakarta.enterprise.context.ApplicationScoped;
 import org.parasol.customerservice.finance.ai.model.FinanceRequestResult;
 
@@ -16,6 +17,7 @@ public interface FinanceAssistant {
             This is the user request. It contains the customerId and the user request. If you called a tool, add the function name to the response.
             Request: {request}
             """)
+    @McpToolBox
     Result<FinanceRequestResult> handleRequest(String request);
 
 }
